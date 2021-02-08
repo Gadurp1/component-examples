@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600,700,900&display=swap");
+
+$body-font-family: "IBM Plex Sans", sans-serif;
+$heading-font-family: "IBM Plex Sans", sans-serif;
+
+$headings:
+  (
+    'h1': (
+      'size': 5rem,
+      'line-height': 4.5rem,
+      'font-family': $heading-font-family,
+    ),
+    'h2': (
+      'size': 4rem,
+      'line-height': 4rem,
+      'font-family': $heading-font-family,
+    ),
+    'h3': (
+      'size': 3rem,
+      'line-height': 3.125rem,
+      'font-family': $heading-font-family,
+      'weight': 300,
+    ),
+    'h4': (
+      'size': 2.25rem,
+      'line-height': 2.125rem,
+      'font-family': $heading-font-family,
+    ),
+    'body-1': (
+      'size': 1rem,
+      'line-height': 1.25rem,
+      'font-family': $body-font-family,
+    ),
+    'body-2': (
+      'size': 0.875rem,
+      'line-height': 1.125rem,
+      'font-family': $body-font-family,
+    ),
+);
+
+@import "~vuetify/src/styles/styles.sass";
+// $material-light: map-merge(
+//   $material-light,
+//   (
+//     "background":
+//       var(--v-background-base, map-get($material-light, "background"))
+//       !important
+//   )
+// );
+// $material-dark: map-merge(
+//   $material-dark,
+//   (
+//     "background":
+//       var(--v-background-base, map-get($material-dark, "background")) !important
+//   )
+// );
+
+$body-font-family: "IBM Plex Sans", sans-serif;
+$font-size-root: 16px;
+$border-radius-root: 8px;
+
+$grid-breakpoints: (
+  "xs": 0
+);

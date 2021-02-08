@@ -1,0 +1,14 @@
+@mixin content-el-base {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 64px;
+  background-color: transparent;
+  @media #{map-get($display-breakpoints, 'sm-and-down')} {
+    padding: 0 16px;
+    background-color: transparent;
+  }
+  @media #{map-get($display-breakpoints, 'md-only')} {
+    background-color: transparent;
+    padding: 0 32px;
+  }
+}

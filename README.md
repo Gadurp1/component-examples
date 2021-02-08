@@ -1,57 +1,42 @@
-# Newmont
 
-## Dependencies
+## Getting Started
+First off we need to 
 
-**Make sure you have Node LTS installed**
+## Creating a new application
 
-[https://nodejs.org/en/](https://nodejs.org/en/)
+For this step you can choose to use Vue CLI or nuxt to create an app.
 
-For managing multiple node installs you can use Node Version Manager
-[https://github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm)
+### Vue app
+- choose default vue 2 install
 
-**Install yarn**
-Alternative to npm
-[https://classic.yarnpkg.com/en/docs/install](https://classic.yarnpkg.com/en/docs/install)
+Now  in the root newmont directory we are going to add our new workspace that we've created and link our components package to that application.
 
-```
-npm install --global yarn
-```
+### Add application to workspaces
+In the root newmont directory look for the workspaces array and add the newly created application path to that array.
 
-**Nodemon**
-Used for hotreloading node servers
-[https://github.com/remy/nodemon](https://github.com/remy/nodemon)
+    "workspaces": [
+	    "packages/key-hero",
+	    "packages/components",
+		"packages/your-application-name"
+	],
+	
+### Link components package to new app
+Now we want to cd into our new application and link our components package.
 
-```
-npm install --global nodemon
-```
+    cd packages/your-application-name
+    yarn link "@newmont/components"
 
-**Lerna**
-[https://lerna.js.org/](https://lerna.js.org/)
+This will allow for use to work locally on various packages/versions locally without having to re-compile each time we want to test changes.
 
-```
-npm install --global lerna
-```
+### Add vuetify
 
-yarn
+    vue add vuetify
+This will add vuetify as a dependency of your application and create the `plugins/vuetify.js` file.  Navigate to that file and add the below configuration.
 
-## Getting started
+    some code here
 
-After cloning the repo cd into the newmont directory
+### Install dependencies
 
-    cd newmont
+### Run the application
 
-From the root newmont directory run
 
-    yarn
-
-This will install all dependecies in a shared node modules folder within the base newmont directory
-
-### Starting the graph gateway
-
-    yarn server:dev
-
-### Starting the dev web client and nuxt server
-
-In a new terminal window cd into the newmont directory and run
-
-    yarn web:dev

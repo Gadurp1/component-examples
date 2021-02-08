@@ -1,0 +1,19 @@
+{
+    "plugins": [
+        {
+            "name": "zeplin-cli-connect-plugin-vue"
+        }
+    ],
+        "styleguides": [
+            "5fa300bc909378ace3cb6b44"
+        ],
+            "components": [
+                {
+                    "path": "./src/AppBar.vue",
+                    "zeplinNames": [
+                        "Nav / AppBar",
+                        "AppBar"
+                    ]
+                }
+            ]
+}

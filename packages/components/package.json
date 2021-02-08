@@ -1,0 +1,22 @@
+{
+    "name": "@newmont/components",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/index.js",
+    "scripts": {
+        "build:dev": "vue-cli-service build --target wc-async --name components 'src/components/*.vue'"
+    },
+    "externals": {
+        "@nuxtjs/vuetify": "^1.11.3"
+    },
+    "dependencies": {
+        "node-sass": "^4.14.1",
+        "sass-loader": "^10.1.1",
+        "vuetify-loader": "^1.7.2",
+        "@nuxtjs/vuetify": "^1.11.3"
+    },
+    "devDependencies": {
+        "deepmerge": "^4.2.2",
+        "sass": "^1.32.6"
+    }
+}

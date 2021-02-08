@@ -1,0 +1,59 @@
+p {
+  font-size: 16px;
+}
+//* NAMED STYLES
+.caption {
+  font-size: 16px;
+}
+.caption--large {
+  font-size: 0.8em;
+  font-weight: 500;
+  &.normal {
+    font-weight: 400;
+  }
+}
+.body--large {
+  font-size: 0.91em;
+  font-weight: 400;
+}
+.body--small {
+  font-size: 20px;
+  font-weight: 400;
+  &.semibold {
+    font-weight: 600;
+  }
+}
+.text-md {
+  font-size: 18px !important;
+  font-weight: 400;
+  &.semibold {
+    font-weight: 600;
+  }
+}
+// Hello
+.body--x-small {
+  font-size: 12px;
+  font-weight: 400;
+  &.semibold {
+    font-weight: 600;
+  }
+}
+//* COLOR VARIATIONS
+.text--white {
+  color: $text-white;
+}
+.text--dark-grey {
+  color: $text-grey;
+}
+.text--blue {
+  color: $text-blue;
+}
+.text--primary--color {
+  color: $minute-green !important;
+}
+.caps {
+  text-transform: uppercase;
+}
+.font-weight-semibold {
+  font-weight: 600;
+}

@@ -1,0 +1,15 @@
+.v-btn {
+  &:not(.v-btn--round).v-size--default {
+    padding: 10px 32px !important;
+    height: unset !important;
+    box-shadow: none;
+    font-weight: 600;
+    font-size: 16px;
+    &.no-padding {
+      padding: 0 !important;
+    }
+  }
+  &.primary {
+    color: #072327 !important;
+  }
+}

@@ -1,0 +1,95 @@
+a {
+  text-decoration: none;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+//* NAVIGATION AND BARS
+// Preping for what is to come with different layoutss
+.nav {
+&.mk-theme-gray {
+    &.theme--dark.v-app-bar.v-toolbar.v-sheet {
+      background-color: $nav-bar-dark;
+    }
+    .toolbar {
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      font-size: 16px;
+      div {
+        margin-right: 1rem;
+      }
+      i {
+        margin-left: 1rem;
+      }
+    }
+  }
+  .logo {
+    display: flex;
+  }
+}
+$lb-mt: 8px;
+
+.shadow {
+  filter: drop-shadow(-5px -15px 100px rgba(0, 0, 0, 0.25));
+}
+// * STRUCTURE
+// true full width
+.container {
+  padding: 0;
+  position: relative;
+}
+.h-full {
+  height: 100%
+}
+.h-4\/5 {
+  height: 80%;
+}
+.w-full {
+  width: 100%;
+}
+.w-1\/2 {
+  width: 50%;
+}
+.flex-1 {
+  flex: 1;
+}
+.p-absolute {
+  position: absolute;
+}
+.p-relative {
+  position: relative;
+}
+
+.border-white-10 {
+  border: 10px solid white !important;
+}
+
+.content-base {
+  @include content-el-base;
+}
+
+.base-container {
+  max-width: 1440px;	
+  margin: auto;	
+  padding: 0 64px;	
+  @media #{map-get($display-breakpoints, 'sm-and-down')} {	
+    padding: 0 16px;	
+  }
+}
+.terciary-container {
+  padding-top: 200px;
+  padding-bottom: 100px;
+  @media #{map-get($display-breakpoints, 'sm-and-down')} {	
+    padding-top: 150px;
+    padding-bottom: 50px;
+  }
+}
+
+// app-bar content do not exceed 1440px
+.v-toolbar__content {
+  @include content-el-base;
+}
+// site content do not exceed 1440px
+
