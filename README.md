@@ -41,6 +41,10 @@ For this step you can choose to use Vue CLI or nuxt to create an app.
 ### Vue app
 - choose default vue 2 install
 
+```
+cd component-examples/packages
+vue create your-application-name
+```
 Now  in the root component-examples directory we are going to add our new workspace that we've created and link our components package to that application.
 
 ### Add application to workspaces
