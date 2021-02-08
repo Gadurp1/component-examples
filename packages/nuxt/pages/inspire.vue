@@ -1,19 +1,20 @@
 <template>
-  <v-row>
-    <v-col class="text-center">
-      <img
-        src="/v.png"
-        alt="Vuetify.js"
-        class="mb-5"
-      >
-      <blockquote class="blockquote">
-        &#8220;First, solve the problem. Then, write the code.&#8221;
-        <footer>
-          <small>
-            <em>&mdash;John Johnson</em>
-          </small>
-        </footer>
-      </blockquote>
-    </v-col>
-  </v-row>
+  <v-app>
+    <v-row class="mt-10">
+      <v-col class="text-center">
+        <v-icon class="font-xl">mdi-check</v-icon>
+        <blockquote class="blockquote">
+         
+          <footer>
+            <small>
+              <em>&mdash;Thanks for Your Reservation</em>
+            </small>
+          </footer>
+        </blockquote>
+        <v-btn color="primary" @click="$router.push('/')">
+          Back to Reservations
+        </v-btn>
+      </v-col>
+    </v-row>
+  </v-app>
 </template>

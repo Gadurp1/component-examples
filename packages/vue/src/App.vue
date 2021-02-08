@@ -2,7 +2,8 @@
   <v-app>
     <v-content>
       <v-row justify="center">
-        <v-col cols="4">
+        <v-col cols="4" class="text-center my-4 ">
+          <h2>Vue Sample App</h2>
           <v-alert outlined color="primary" class="mt-10" v-if="result">
             <div class="title text-uppercase">
               {{ result }}

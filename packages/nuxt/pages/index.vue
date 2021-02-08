@@ -3,6 +3,8 @@
     <v-main>
       <v-row justify="center">
         <v-col cols="4">
+          <h2 class="text-center mt-10">Nuxt Sample App</h2>
+
           <ReservationCard :loading="loading" v-if="!result">
             <template #image>
               <v-img
@@ -19,7 +21,7 @@
                 column
               >
                 <v-chip v-for="item in items" :value="item">
-                  {{item}}
+                  {{ item }}
                 </v-chip>
               </v-chip-group>
             </template>
@@ -41,19 +43,14 @@ export default {
   data: () => ({
     selection: null,
     loading: false,
-    items: [
-      'item 1',
-      'item 2',
-      'item 3',
-      'item 4'
-    ]
+    items: ["item 1", "item 2", "item 3", "item 4"],
   }),
   methods: {
     runQuery() {
       this.loading = true;
       setTimeout(() => {
         this.loading = false;
-        this.$router.push('inspire')
+        this.$router.push("inspire");
       }, 2000);
     },
   },
