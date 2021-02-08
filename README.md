@@ -35,11 +35,8 @@ The nuxt package is a nuxt application with one page that implements our compone
 When a user reserves an item on this site they will be redirected to the next screen.
   ![enter image description here](https://i.ibb.co/CtBtBPp/Screen-Shot-2021-02-08-at-3-55-56-PM.png)
 # Creating a new vue application
-
-For this step you can choose to use Vue CLI or nuxt to create an app.
-
-### Vue app
-- choose default vue 2 install
+- copy pasta vue directory in /packages
+- use vue clie and choose default vue 2 install
 
 ```
 cd component-examples/packages
