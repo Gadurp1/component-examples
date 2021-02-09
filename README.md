@@ -69,6 +69,26 @@ This will allow for use to work on various packages/versions locally without hav
 vue add vuetify
 This will add vuetify as a dependency to your application and create the `plugins/vuetify.js` file.  
 
+### Add library to main.js
+
+    ```
+    import Vue from "vue";
+    import App from "./App.vue";
+    import { PageComponents } from '@newmont/components'
+    import vuetify from './plugins/vuetify';
+
+    Vue.config.productionTip = false;
+
+    Object.keys(PageComponents).forEach((block) => {
+        Vue.component(block, PageComponents[block])
+    })
+
+    new Vue({
+        vuetify,
+        render: h => h(App)
+    }).$mount("#app");
+
+    ```
 ### Customizing vuetify
 Navigate to `your-application-name/src/plugins/vuetify.js`in your IDE and add the below configuration.
 ```js
@@ -134,26 +154,7 @@ Now we want to cd into our new application and link our components package.
     cd packages/your-application-name
     yarn link "@newmont/components"
 ```
-### Add library to main.js
 
-    ```
-    import Vue from "vue";
-    import App from "./App.vue";
-    import { PageComponents } from '@newmont/components'
-    import vuetify from './plugins/vuetify';
-
-    Vue.config.productionTip = false;
-
-    Object.keys(PageComponents).forEach((block) => {
-        Vue.component(block, PageComponents[block])
-    })
-
-    new Vue({
-        vuetify,
-        render: h => h(App)
-    }).$mount("#app");
-
-    ```
 ### Add library to nuxt
 This will allow for use to work on various packages/versions locally without having to re-compile all linked dependencies each time we want to test changes.
 
