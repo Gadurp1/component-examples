@@ -10,13 +10,16 @@
         "@nuxtjs/vuetify": "^1.11.3"
     },
     "dependencies": {
+        "@nuxtjs/vuetify": "^1.11.3",
         "node-sass": "^4.14.1",
         "sass-loader": "^10.1.1",
-        "vuetify-loader": "^1.7.2",
-        "@nuxtjs/vuetify": "^1.11.3"
+        "vuetify-loader": "^1.7.2"
     },
     "devDependencies": {
+        "babel-eslint": "^10.1.0",
         "deepmerge": "^4.2.2",
+        "eslint": "^7.19.0",
+        "eslint-plugin-vue": "^7.5.0",
         "sass": "^1.32.6"
     }
 }

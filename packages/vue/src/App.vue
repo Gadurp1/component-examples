@@ -36,7 +36,7 @@
                 color="accent"
                 column
               >
-                <v-chip v-for="item in items" :value="item">
+                <v-chip v-for="(item,index) in items" :bind="index" :value="item">
                   {{item}}
                 </v-chip>
               </v-chip-group>

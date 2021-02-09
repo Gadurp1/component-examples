@@ -38,16 +38,17 @@ When a user reserves an item on this site they will be redirected to the next sc
 - copy pasta vue directory in /packages
 - use vue clie and choose default vue 2 install
 
-```
-cd component-examples/packages
-vue create your-application-name
+```bash
+    cd component-examples/packages
+    vue create your-application-name
 ```
 Now  in the root component-examples directory we are going to add our new workspace that we've created and link our components package to that application.
 
 ### Add application to workspaces
-In the root component-examples directory look for the workspaces array and add the newly created application path to that array.
+In the root component-examples directory look for the workspaces array in your package.json file and add the newly created application path to that array.
 
-    "workspaces": [
+``` json
+"workspaces": [
 	    "packages/vue",
 	    "packages/nuxt",
 	    "packages/components",
@@ -55,6 +56,7 @@ In the root component-examples directory look for the workspaces array and add t
 	    // add new line for your app
 		"packages/your-application-name"
 	],
+```
 	
 ### Link components package to new app
 Now we want to cd into our new application and link our components package.
@@ -113,6 +115,90 @@ Navigate to `your-application-name/src/plugins/vuetify.js`in your IDE and add th
 ```
 The above  will add some custom vars for your applications theme.
 
+### Add this to you App.vue file in your application
+```vue
+<template>
+  <v-app>
+    <v-content>
+      <v-row justify="center">
+        <v-col cols="4" class="text-center my-4 ">
+          <h2>Vue Sample App</h2>
+          <v-alert outlined color="primary" class="mt-10" v-if="result">
+            <div class="title text-uppercase">
+              {{ result }}
+            </div>
+            <div>
+              Maecenas ullamcorper, dui et placerat feugiat, eros pede varius
+              nisi, condimentum viverra felis nunc et lorem. Duis vel nibh at
+              velit scelerisque suscipit. Praesent blandit laoreet nibh. Aenean
+              posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu
+              sollicitudin urna dolor sagittis lacus. Etiam sollicitudin, ipsum
+              eu pulvinar rutrum, tellus ipsum laoreet sapien, quis venenatis
+              ante odio sit amet eros.
+            </div>
+            <v-btn class="primary" @click="result = null">
+              Back
+            </v-btn>
+          </v-alert>
+          <ReservationCard :loading="loading" v-if="!result">
+            <template #image>
+              <v-img
+                height="250"
+                src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+              ></v-img>
+            </template>
+            <template #title=""> My Blue Restaurant Theme </template>
+            <template #buttons>
+              <v-chip-group
+                v-model="selection"
+                active-class="primary accent-4 white--text"
+                color="accent"
+                column
+              >
+                <v-chip v-for="(item,index) in items" v-bind:key="index" :value="item">
+                  {{item}}
+                </v-chip>
+              </v-chip-group>
+            </template>
+            <template #card-action>
+              <v-btn color="secondary lighten-2" text @click="runQuery()">
+                Reserve
+              </v-btn>
+            </template>
+          </ReservationCard>
+        </v-col>
+      </v-row>
+    </v-content>
+  </v-app>
+</template>
+
+<script>
+export default {
+  name: "App",
+  data: () => ({
+    selection: null,
+    loading: false,
+    items: [
+      'item 1',
+      'item 2',
+      'item 3',
+      'item 4'
+    ],
+    result: null
+  }),
+  methods: {
+    runQuery() {
+      this.loading = true;
+      setTimeout(() => {
+        this.loading = false;
+        this.result = `You clicked ${this.selection}`;
+      }, 2000);
+    },
+  },
+};
+</script>
+
+```
 ### Install Dependencies and Run New Application
 Now that vuetify is installed and we have a base for some customizations we can install dependencies and run the new application
 
