@@ -66,7 +66,7 @@ This will allow for use to work on various packages/versions locally without hav
 
 ### Add vuetify
 
-    vue add vuetify
+vue add vuetify
 This will add vuetify as a dependency to your application and create the `plugins/vuetify.js` file.  
 
 ### Customizing vuetify
@@ -182,7 +182,27 @@ Now that vuetify is installed and we have a base for some customizations we can 
     cd packages/your-application-name
     yarn
     yarn serve
-    
+
+### Add library to main.js
+
+    ```
+    import Vue from "vue";
+    import App from "./App.vue";
+    import { PageComponents } from '@newmont/components'
+    import vuetify from './plugins/vuetify';
+
+    Vue.config.productionTip = false;
+
+    Object.keys(PageComponents).forEach((block) => {
+        Vue.component(block, PageComponents[block])
+    })
+
+    new Vue({
+        vuetify,
+        render: h => h(App)
+    }).$mount("#app");
+
+    ```
 ### Customize vuetify
 Navigate to `your-application-name/src/nuxt.config.js`in your IDE and add the below configuration.
 
