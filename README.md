@@ -7,7 +7,7 @@ First off we need to clone our repo
 Now that we have our example repo `cd into our repo` and install dependencies in our base repository
 
     cd component-examples 
-    yarn
+    yarn bootstrap
 What we've done is install dependencies for our packages and link and local workspaces.  By default the repo will have 3 workspaces.
 
  - components

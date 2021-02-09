@@ -10,18 +10,7 @@
       "packages/vue"
     ],
   "scripts": {
-    "test": "jest",
-    "dev": "yarn server && yarn web",
-    "prod": "yarn server:prod && yarn web:prod",
-    "web:dev": "cd packages/minute-web && yarn dev",
-    "web:start": "cd packages/minute-web && yarn start",
-    "web:generate": "cd packages/minute-web && yarn generate",
-    "server:dev": "cd packages/newmont-graph && start:dev",
-    "web:deploy": "cd packages/minute-web &&  ./deploy.sh",
-    "server:serverless": "cd packages/minute-graph && yarn start:serverless",
-    "server:prod": "cd packages/newmont-graph && start",
-    "server:deploy-dev": "cd packages/newmont-graph && deploy:dev",
-    "server:deploy-prod": "cd packages/newmont-graph && deploy:prod"
+    "bootstrap": "yarn && cd packages/components && yarn link"
   },
   "dependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
