@@ -134,7 +134,26 @@ Now we want to cd into our new application and link our components package.
     cd packages/your-application-name
     yarn link "@newmont/components"
 ```
+### Add library to main.js
 
+    ```
+    import Vue from "vue";
+    import App from "./App.vue";
+    import { PageComponents } from '@newmont/components'
+    import vuetify from './plugins/vuetify';
+
+    Vue.config.productionTip = false;
+
+    Object.keys(PageComponents).forEach((block) => {
+        Vue.component(block, PageComponents[block])
+    })
+
+    new Vue({
+        vuetify,
+        render: h => h(App)
+    }).$mount("#app");
+
+    ```
 ### Add library to nuxt
 This will allow for use to work on various packages/versions locally without having to re-compile all linked dependencies each time we want to test changes.
 
@@ -183,26 +202,7 @@ Now that vuetify is installed and we have a base for some customizations we can 
     yarn
     yarn serve
 
-### Add library to main.js
 
-    ```
-    import Vue from "vue";
-    import App from "./App.vue";
-    import { PageComponents } from '@newmont/components'
-    import vuetify from './plugins/vuetify';
-
-    Vue.config.productionTip = false;
-
-    Object.keys(PageComponents).forEach((block) => {
-        Vue.component(block, PageComponents[block])
-    })
-
-    new Vue({
-        vuetify,
-        render: h => h(App)
-    }).$mount("#app");
-
-    ```
 ### Customize vuetify
 Navigate to `your-application-name/src/nuxt.config.js`in your IDE and add the below configuration.
 
